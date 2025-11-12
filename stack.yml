@@ -15,7 +15,7 @@ services:
         - "traefik.http.routers.david-secure.entrypoints=https"
         - "traefik.http.routers.david-secure.rule=Host(`david.tudominio.com`)"
         - "traefik.http.routers.david-secure.tls=true"
-        - "traefik.http.routers.davidt-secure.tls.certresolver=http"
+        - "traefik.http.routers.david-secure.tls.certresolver=http"
         - "traefik.http.routers.david-secure.service=david"
         - "traefik.http.services.david.loadbalancer.server.port=5000"
         - "traefik.docker.network=traefik-public"
