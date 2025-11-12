@@ -2,22 +2,22 @@ version: "3.8"
 
 services:
   safealert:
-    image: safealert:latest
+    image: david:latest
     build: .
     deploy:
       replicas: 1
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.safealert.entrypoints=http"
-        - "traefik.http.routers.safealert.rule=Host(`safealert.tudominio.com`)"
-        - "traefik.http.middlewares.safealert-https-redirect.redirectscheme.scheme=https"
-        - "traefik.http.routers.safealert.middlewares=safealert-https-redirect"
-        - "traefik.http.routers.safealert-secure.entrypoints=https"
-        - "traefik.http.routers.safealert-secure.rule=Host(`safealert.tudominio.com`)"
-        - "traefik.http.routers.safealert-secure.tls=true"
-        - "traefik.http.routers.safealert-secure.tls.certresolver=http"
-        - "traefik.http.routers.safealert-secure.service=safealert"
-        - "traefik.http.services.safealert.loadbalancer.server.port=5000"
+        - "traefik.http.routers.david.entrypoints=http"
+        - "traefik.http.routers.david.rule=Host(`david.tudominio.com`)"
+        - "traefik.http.middlewares.david-https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.routers.david.middlewares=david-https-redirect"
+        - "traefik.http.routers.david-secure.entrypoints=https"
+        - "traefik.http.routers.david-secure.rule=Host(`david.tudominio.com`)"
+        - "traefik.http.routers.david-secure.tls=true"
+        - "traefik.http.routers.davidt-secure.tls.certresolver=http"
+        - "traefik.http.routers.david-secure.service=david"
+        - "traefik.http.services.david.loadbalancer.server.port=5000"
         - "traefik.docker.network=traefik-public"
     networks:
       - traefik-public
