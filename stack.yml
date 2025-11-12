@@ -17,7 +17,7 @@ services:
         - "traefik.http.routers.pgcocha-secure.tls=true"
         - "traefik.http.routers.pgcocha-secure.tls.certresolver=http"
         - "traefik.http.routers.pgcocha-secure.service=pgcocha"
-        - "traefik.http.services.pgcocha.loadbalancer.server.port=80"
+        - "traefik.http.services.pgcocha.loadbalancer.server.port=5000"
         - "traefik.docker.network=traefik-public"
     networks:
       - traefik-public
