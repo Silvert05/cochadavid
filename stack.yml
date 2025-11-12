@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   safealert:
-    image: david:latest
+    image: cochadavid:latest
     build: .
     deploy:
       replicas: 1
