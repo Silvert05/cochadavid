@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 # Comando por defecto
-CMD ["pytho", "app.py"]
+CMD ["python", "app.py"]
